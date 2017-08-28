@@ -2,14 +2,21 @@
 <html lang="en">
 
 <head>
-    <script src="public/angular.min.js"></script>
-    <script src="public/angular-route.min.js"></script>
-    <script src="scripts/client.js"></script>
+    <script src="/vendors/angular.min.js"></script>
+    <script src="/vendors/angular-route.min.js"></script>
+    <script src="/scripts/client.js"></script>
+    <script src="/scripts/controllers/bulletin.controller.js"></script>
+    <script src="/scripts/services/bulletin.service.js"></script>
     <title>Bobby's Bulletin Board</title>
 </head>
 
-<body>
-    <h1>CODE CHALLENGE</h1>
+<body ng-app="webApp">
+    <div ng-controller="bulletinController as vm">
+        <h1>CODE CHALLENGE</h1>
+        <input type="text" ng-model="vm.PostToAdd.name" id="name" placeholder="Name">
+        <input type="text" ng-model="vm.PostToAdd.post" id="post" placeholder="Message">
+        <button ng-click="vm.addPost()">POST</button>
+    </div>
 </body>
 
 </html>
